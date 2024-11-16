@@ -29,9 +29,14 @@ Kanker adalah penyakit mematikan yang menjadi penyebab kematian nomor 2 yang dap
 kanker ialah suatu klasifikasi penyakit yang mana sel tubuh tumbuh secara tidak terkendali dan dapat menyebar kepada sel lainnya. tubuh manusia terbentuk dari triliun lebih sel dan salah satu dari sel tersebut dapat bermutasi dan menginfeksi sel lainnya, namun tubuh manusia sendiri memiliki kekebalan yang dapat menghancurkan sel yang bermutasi sebelum menyebar ke sel lainnya.
 
 
-Kanker dapat terjadi secara biologis karena suatus kegagalan pada proses apoptosis sehingga dapat menyebabkan sel kanker yang mampu bertahan hidup secara otonom dalam tubuh kemudian kanker bermutasi sampai dapat memiliki kemampuan untuk menghindari  sel _imunokompeten_ termasuk sel T sitoksis(TCL) dan sel _Natural Killer_(NKsel) yang memiliki kemampuan untuk menghancurkan sel yang bermutasi.
+Kanker dapat terjadi secara biologis karena suatus kegagalan pada proses apoptosis yakni ketika sistem kematian sel yang terpogram yang memungkinkan sel untuk menghancurkan diri sendiri ketika dirangsang oleh pemicu yang tepat sehingga dapat menyebabkan sel kanker yang mampu bertahan hidup secara otonom dalam tubuh kemudian kanker bermutasi sampai dapat memiliki kemampuan untuk menghindari  sel _imunokompeten_ termasuk sel T sitoksis(TCL) dan sel _Natural Killer_(NKsel) yang memiliki kemampuan untuk menghancurkan sel yang bermutasi.
 
 kanker dapat diketahui berdasarkan pertumbuhan sel yang tidak terkendali dan dapat menuju ke daerah oragan lain yang lebih jauh (metastasis) yang bermula dengan menyebar pada organ asal kemudian menyebar ke organ terdekat dan kemudian menuju ke organ lain. Metastatis penyakit kanker menuju ke organ lain bisa melalui berbagai cara, yaitu aliran darah (hematogen) dan kelenjar limfe (limfogen). 
+
+//faktor faktor
+Faktor faktor yang mempengaruhi terjadinya kanker itu dapat berasal dari manusia sendiri (endoge) atau faktor dari luar (eksogen). Faktor-faktor endogen dapat berupa gen regulator/ pengatur sel, hormon, sistem imun maupun psikis dan dapat juga berasal dari herediter / keturunan. Sedangkan faktor eksoken lebih kompleks lagi karena sangat banyak variabel yang dapat berkontribusi seperti faktor biologi berupa bakteri, virus, jamur; faktor kimia bisa berasal dari makanan, minuman, bahan kosmetik, bahan pembersih/ pencuci, udara, sanitasi lingkungan; sedangkan faktor fisis seperti elektronik, radiasi; walaupun radiasi juga dibagi menjadi beberapa jenis, contoh radiasi sinar matahari, sinar X, radiasi alat-alat radioaktif dll.
+//https://www.bing.com/ck/a?!&&p=a280621be4b39d407476caed02598bea4c94629da3a2cbd2c57e3f408abd8bb0JmltdHM9MTczMTQ1NjAwMA&ptn=3&ver=2&hsh=4&fclid=361ea560-29bd-6018-1a84-b04728a661ce&psq=Dr.+Theresia+Indah+Budhy%2c+drg.%2c+M.+Kes.%2c+Sp.PMM+(K).+2019.+Mengapa+Terjadi+Kanker.+Pusat+Penerbitan+dan+Percetakan+UNAIR%2c+Jawa+TImur.+Airlangga+University+Press.&u=a1aHR0cHM6Ly9yZXBvc2l0b3J5LnVuYWlyLmFjLmlkLzkxODg3LzYvQnVrdUthbmtlcjAxLnBkZg&ntb=1
+
 //https://pmc.ncbi.nlm.nih.gov/articles/PMC6169832/
 
 //klasifikasi kanker
@@ -47,7 +52,10 @@ sel kanker pada stadium ini juga belum tumbuh hingga ke dalam jaringan tubuh ata
 - Stadium 2: sel kanker sudah berkembang dan tumbuh dengan ukuran yang lebih besar. Namun sel kanker ini masih berada di tempat awal tumbuh dan belum menyebar ke bagian tubuh lainnya. Kanker stadium 2 yang tidak segera ditangani bisa berkembang menjadi kanker stadium lanjut.
 - Stadium 3: sel kanker sudah mulai tumbuh lebih dalam dan mulai menyebar seperti pada kelenjar getah bening dan sekitarnya, namun penyebarannya belum sampai ke bagian tubuh lain yang jauh dari lokasi awal munculnya sel kanker.
 - Stadium 4: sel kanker sudah menyebar ke organ tubuh lain. misalnya sel kanker yang awalnya tumbuh di paru-paru dapat menyebar ke otak ketika sudah mencapai stadium 4. 
-//faktor faktor
-Faktor faktor yang mempengaruhi terjadinya kanker itu dapat berasal dari manusia sendiri (endoge) atau faktor dari luar (eksogen). Faktor-faktor endogen dapat berupa gen regulator/ pengatur sel, hormon, sistem imun maupun psikis dan dapat juga berasal dari herediter / keturunan. Sedangkan faktor eksoken lebih kompleks lagi karena sangat banyak variabel yang dapat berkontribusi seperti faktor biologi berupa bakteri, virus, jamur; faktor kimia bisa berasal dari makanan, minuman, bahan kosmetik, bahan pembersih/ pencuci, udara, sanitasi lingkungan; sedangkan faktor fisis seperti elektronik, radiasi; walaupun radiasi juga dibagi menjadi beberapa jenis, contoh radiasi sinar matahari, sinar X, radiasi alat-alat radioaktif dll.
-//https://www.bing.com/ck/a?!&&p=a280621be4b39d407476caed02598bea4c94629da3a2cbd2c57e3f408abd8bb0JmltdHM9MTczMTQ1NjAwMA&ptn=3&ver=2&hsh=4&fclid=361ea560-29bd-6018-1a84-b04728a661ce&psq=Dr.+Theresia+Indah+Budhy%2c+drg.%2c+M.+Kes.%2c+Sp.PMM+(K).+2019.+Mengapa+Terjadi+Kanker.+Pusat+Penerbitan+dan+Percetakan+UNAIR%2c+Jawa+TImur.+Airlangga+University+Press.&u=a1aHR0cHM6Ly9yZXBvc2l0b3J5LnVuYWlyLmFjLmlkLzkxODg3LzYvQnVrdUthbmtlcjAxLnBkZg&ntb=1
+
+//https://www.who.int/publications/m/item/cancer-idn-020
+// dampak kanker dan bagaimana kanker harus diketahui dari awal agar tidak naik ke stadium tinggi
+Kanker merupakan penyakit yang sulit untuk dideteksi secara normal sebelum tumbuh  dan 
+
+
 
