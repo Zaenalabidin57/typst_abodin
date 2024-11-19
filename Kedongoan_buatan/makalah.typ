@@ -5,7 +5,7 @@
 ))
 
 #set text(lang: "id",
-  font:"Codelia",
+  font:"Times New Roman",
   size: 12pt,
 )
 #align(center)[
@@ -55,7 +55,55 @@ sel kanker pada stadium ini juga belum tumbuh hingga ke dalam jaringan tubuh ata
 
 //https://www.who.int/publications/m/item/cancer-idn-020
 // dampak kanker dan bagaimana kanker harus diketahui dari awal agar tidak naik ke stadium tinggi
-Kanker merupakan penyakit yang sulit untuk dideteksi secara normal sebelum tumbuh  dan 
+Kanker merupakan penyakit yang berbahaya dan sulit dideteksi tanpa bantuan dokter sehingga penyakit kanker akan terdeteksi ketika pasien mulai merasakan nyeri yang mana kemungkinan besar kanker tersebut sudah membesar dan semakin sulit untuk diobati sehingga pengidap kanker harus segera di deteksi dan diobati secepat mungkin sebelum penyakit nya mulai memburuk dan menyebar ke seluruh tubuh.
+//  metode pendeteksian kanker
+
+Untuk mendeteksi kanker ada beberapa cara yakni dengan cara pemeriksaan fisik, dengan cara ini dokter memeriksa apakan ada benjolan yang tidak seharusnya ada, contohnya adalah gejalan kanker limfoma. kemudian ada juga cara pemeriksaan hematologi yakni memeriksa kandungan darah dalam tubuh, tes urine dan pemeriksaan sel jaringan tertentu (biopsi), hal ini dapat membantu untuk mengetahui jumlah sel darah yang dapat dipengaruhi oleh adanya sel kanker. kemudian tes yang paling sering digunakan adalah tes pencitraan yakni sebuah tes yang menghasilkan sebuah gambaran dari tubuh pasien menggunakan sebuah teknologi untuk melihat adanya sel-sel yang tidak normal, seperti CT (computed tomography) scan, scan tulang, MRI (Magnetic Resonance Imaging) scan, PET(Positron Emission Tomography) scan, USG(Ultrasonografi) dan lain lain.
+
+//penjelasan mengenai biopsi
+
+Salah satu cara untuk mendeteksi kanker adalah biopsi, Biopsi adalah sebuah tes yang mengambil sampel jaringan atau sel dari tubuh pasien yang dicurigai memiliki kanker yang kemudian di analisa lebih lanjut di laboratorium. dengan sampel jaringan tersebut dokter dapat memberikan hasil yang lebih akurat dibandingkan dengan metode lain karena berhubungan dengan jaringan langsung, tidak seperti metode lainnya yang hanya meraba raba.
+
+//penjelasan Histopathological Image Analysis 
+//https://www.researchgate.net/publication/277512060_Histopathological_Image_Analysis_Deteksi_Kanker_Dengan_Metode_Contour_Improvement
+
+Histopathological Image Analysis adalah cabang ilmu pengetahuan dari pendeteksian kanker yang menggunakan sampel data yang diambil dari metode biopsi untuk mendeteksi adanya anomali dalam sel, namun sel yang diambil itu memiliki warna transparan dan sulit untuk ditangkap gambarnya jadi perlu melakukan proses "mewarnai" sampel dengan Hematoxyllin and Eosin (H&E) yang dapat memunculkan kontras dalam gambar jaringan sel.
+#figure(
+  image("images/gambar_contoh.png", width: 80%), caption: [Hasil gambar jaringan sel setelah "pewarnaan"],
+)
+
+//  https://www.mdpi.com/2079-9292/10/5/562
+setelah itu dapat di deteksi adanya kanker pada jaringan tersebut dengan mencari irregularity pada sel, namun untuk mendeteksinya diperlukan waktu yang lama dikarenakan seulitnya pendeteksiannya karena jaringan sel yang kecil dan kemungkinann terlewat ketika di deteksi oleh mata manusia saja maka oleh sebab itu maka diperlukan sebuah sistem yang dapat membantu untuk memproses hasil biopsi ini.
+
+= Implementasi Machine Learning
+Awal mula analisis gambar dimulai dari mengidentifikasi dari struktur dari nuclei (sel yang mengatur sel-sel lainnya seperti dalam hal berkembang seperti metabolisme) yang dapat memberikan informasi mengenai struktur dasar dari nuclei tersebut seperti jumlah nuclei per area, ukuran nuclei dan formatnya yang dapat membantu untuk mendeteksi apakah ada anomali dari sampel tersebut. namun setelah itu masalah dari analisis ini adalah pada bagian pendefinisian struktur low-level dan high-level, yang mana low-level berfokus pada segmentasi dari nuclei  yang menjadi langkah awal dalam proses analisis, setelah itu diteruskan ke struktur high-level yang menganalisis jaringan sel pada area (gambaran besar). pada awalnya perkembangan sistem pembantu dalam memproses gambar hanya pada area low-level saja dikarenakan keterbatasan teknologi, namun pada zaman sekarang mulai terbentuk sistem-sistem yang dapat membantu dalam menganalisa struktur high-level dengan bantuan machine learning. 
+
+= Aplikasi Machine Learning dalam Pathologi
+
+== Comupter Asisted Diagnosis(CAD)
+Sistem Computer Asisted Diagnosis (CAD) Menjadi topik hangat di kalangan peneliti di bidang teknologi pada ilmu pathologi, yang dapat membantu untuk mempermudah dalam mendiagnosa pasien seperti dengan memberikan akurasi dalam pendiagnosaan yang lebih tinggi dikarenakan error yang terjadi pada CAD ini bisa di training kembali agar mencapai status yang memuaskan dan dapat membantu dokter patologi.
+
+== Content Based Image Retrival(CBIR)
+Content Based Image Retrieval adalah teknik yang menganalisa gambar dan mencocokan gambar yang ada pada query, hal ini sangat berguna dalam beberapa kasus, terutama dalam mendiagnosa penyakit yang ada, memberikan sebuah label pada data dan penelitian, salah satu contohnya adalah dalam pendidikan seorang dokter patologi memberikan kuliah kepada mahasiswa dalam menganalisa kasus penyakit yang ada dalam sampel, juga sistem ini dapat membantu para profesional dalam mengenali kasus kanker yang langka.
+
+== Penemuan Baru dalam Clinipathological Relationship
+Dalam sejarahnya, banyak penemuan mengenai penyakit seperti kanker dan penyakit infeksi telah ditemukan oleh dokter dan peneliti yang meneliti dan mengobservasi penyakit tersebut secara menyeluruh, namun hal tersebut dapat memakan banyak waktu dan bisa saja memakan korban jiwa jika 
+
+= Masalah dalam implementasi Histopathological Image Analysis
+
+meski memiliki banyak manfaat yang didapatkan dalam sistem implemetasi dari Histopathological Image Analysis, masih banyak kendala yang terjadi dalam implementasinya diantaranya:
+== Gambar yang sangat besar
+dalam pemotretan sampel menggunakan microskop itu menghasilkan gambar sebesar 10.000 x 10.000 pixel yang dapat membebani beban kalkulasi dari komputer, kemudian dalam training data dari machine learning rata-rata dalam sampelnya hanya seukuran 256 x 256 pixel jadi perbandingannya sangat jauh, sehingga pada training data nya menggunakan mematok area menjadi beberapa bagian (patches) sebesar 256 x 256 pixel, namun dengan begitu akan mengurangi informasi yang ada pada setiap area karena pada setiap sampel yang ada membutuhkan lebih dari ukuran yang dipatok tersebut karena bisa saja jaringan sehat dianggap menjadi jaringan sakit (false positive), namung dengan perkembangan sistem kalkulasi machine learning sekarang rata-rata patch size 960 x 960 pixel yang dapat berkontribusi dalam menambah akurasi dari hasil training. 
+#figure( 
+  image("images/gambar_perbandingan.png", width: 80%), caption:
+  [perbandingan antara ukuran sampel dengan ukuran patch]
+)
+
+== Kekurangan Pelabelan Gambar
+Masalah terbesar yang dialami pada training data ini adalah hanya ada sedikit sampel yang telah diberi label yang tersedia. kunci sukses dari machine learning pada dasarnya ada pengenalan gambar yang sesuai dengan labelnya / mirip. dengan besarnya gambar yang ada maka sangatlah sulit untuk memberikan label pada tingkatan patch, sehingga label yang diberikan hanya pada area yang memiliki kemungkinan tertinggi kanker (area terdeteksi kanker), jadi 
 
 
-
+== 
+// WSI Whole Slide Image (gambar keseluruhan sampel)
+// ROI Region of Interest (daerah yang diinginkan)
+//
