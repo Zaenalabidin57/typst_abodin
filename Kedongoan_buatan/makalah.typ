@@ -20,6 +20,8 @@ NIM: 1222646 \
 
 #set par(justify: true, leading: 1.5em, first-line-indent: 2em)
 
+//BAB fucking 1
+
 = Pendahuluan
 //menjelaskan bagaimana kanker itu berbahaya dan dapat terjadi kepada siapa saja
 Kanker adalah penyakit mematikan yang menjadi penyebab kematian nomor 2 yang dapat menyerang siapa saja, berdasarkan data dari WHO di indonesia sendiri pada tahun 2018 ada sekitar 348.809 kasus kanker dengan jumlah kematian yang disebabkan oleh kanker sebanyak 207,210. hal ini menjadikan kanker adalah sebuah momok mematikan yang menghantui semua orang.
@@ -72,14 +74,39 @@ Histopathological Image Analysis adalah cabang ilmu pengetahuan dari pendeteksia
   image("images/gambar_contoh.png", width: 80%), caption: [Hasil gambar jaringan sel setelah "pewarnaan"],
 )
 
+Kemudian setelah dilakukan pewarnaan maka dapat diteliti dan dicari iregularitas dari sel yang ada, jika terdeteksi ada iregularitas maka dapat dipastikan adanya kanker pada jaringan sel tersebut dan dapat didapatkan informasi tambahan mengenai kondisi kanker yang diidap seperti stadium berapa dan sudah berkembang biak sebanyak apa dan apakah sudah menyebar atau belum.
 //  https://www.mdpi.com/2079-9292/10/5/562
-setelah itu dapat di deteksi adanya kanker pada jaringan tersebut dengan mencari irregularity pada sel, namun untuk mendeteksinya diperlukan waktu yang lama dikarenakan seulitnya pendeteksiannya karena jaringan sel yang kecil dan kemungkinann terlewat ketika di deteksi oleh mata manusia saja maka oleh sebab itu maka diperlukan sebuah sistem yang dapat membantu untuk memproses hasil biopsi ini.
+namun untuk mendeteksinya diperlukan waktu yang lama dikarenakan seulitnya pendeteksiannya karena jaringan sel yang kecil dan kemungkinann terlewat ketika di deteksi oleh mata manusia saja maka oleh sebab itu maka diperlukan sebuah sistem yang dapat membantu untuk memproses hasil biopsi ini.
+
+//bab fucking 3
 
 = Implementasi Machine Learning
 Awal mula analisis gambar dimulai dari mengidentifikasi dari struktur dari nuclei (sel yang mengatur sel-sel lainnya seperti dalam hal berkembang seperti metabolisme) yang dapat memberikan informasi mengenai struktur dasar dari nuclei tersebut seperti jumlah nuclei per area, ukuran nuclei dan formatnya yang dapat membantu untuk mendeteksi apakah ada anomali dari sampel tersebut. namun setelah itu masalah dari analisis ini adalah pada bagian pendefinisian struktur low-level dan high-level, yang mana low-level berfokus pada segmentasi dari nuclei  yang menjadi langkah awal dalam proses analisis, setelah itu diteruskan ke struktur high-level yang menganalisis jaringan sel pada area (gambaran besar). pada awalnya perkembangan sistem pembantu dalam memproses gambar hanya pada area low-level saja dikarenakan keterbatasan teknologi, namun pada zaman sekarang mulai terbentuk sistem-sistem yang dapat membantu dalam menganalisa struktur high-level dengan bantuan machine learning. 
 
+untuk metode machine learning yang digunakan dalam Histopathological image Analysis ini dibagi menjadi beberapa segment berdasarkan informasi yang dibutuhkan dan segmentasi dari data yang digunakan apakah dari low-level atau yang berfokus pada segmentasi dari nuclei, high-level yang berfokus pada keseluruhan gambar yakni:
+
+== unsupervised
+
+metode ini menggunakan data raw (mentah) yang tidak diberi label.
+algoritma k-means adalah metode machine learning unsupervised yang sering digunakan dalam segmentasi dari pixel gambar. dalam metode ini menjadi tulang punggung dalam metode lainnya. Fatakdawala et al ((cite this mf)) mengusulkan metode expectation-maximization dari kontur geodesic aktiv untuk mendeteksi lymphocyte nuclei (sel darah putih) yang kemudian dapat mendapatkan informasi mengenai 4 struktur, lymphocyte nuclei, stroma(sel penghubung), nuclei terjangkit kanker dan background. prosesnya dimulai dengan menginisiasi segmentasi menggunakan algoritma k-means yang kemudian mengelompokan pixel dengan intensitas yang sama dan kemudian cluster tersebut di improve dengan algoritma expectation-maximization, setelah itu mengidentifikasi kontur berdasarkan teori interaksi magnetik, setelah definisi kontur, setelah itu mencari nuclei yang tumpang tindih yang artinya terdapat kanker, ekperimen ini dilakukan menggunakan dataset kanker payudara.
+
+kemudian Mazo et al (cite this mf too) mengusulkan untuk menggunakan k-means untuk melakukan segmentasi area jantung menjadi 3 bagian, yakni bagian stroma (sel penghubung), area terang dan jaringan epitel (jaringan penyaring), metode ini menghasilkan akurasi 85%, kemudian Tosun mengusulkan segmentasi ini dibagi lagi menjadi 3 kategori (ungu, pink, putih) yang kemudian dibagi lagi menjadi sub kategori berdasarkan intensitas dari warna pixel yang ada, metode ini menambah akurasi dari 85% menjadi 94,89%. Nativ et al (cite this mf too) menggunakan k-means untuk melakukan segmentasi dari gambar tetesan lemak menggunakan model kontur aktif, metode ini menambah akurasi dari 86,78% menjadi 94,89%.
+
+
+== supervised
+algoritma ini menggunakan data yang telah diberikan label, sehingga data yang diberikan lebih akurat. 
+Yu dan ip (cite this mf) menggunakan pendekatan menggunakan prosedur patching dan metode yang dinamakan Spatial Markov Model (SHMM). setiap patch (sebesar 256 x 256 pixel) direpresentasikan dengan vector yang menggunakan campuran dari Gabor energy (metode yang mepresentasikan intensitas cahaya dengan vektor) dan gray-level features.
+
+#image("images/gabor.jpg", width: 80%)
+
+== feature extraction
+dalam metode ini, algoritma mengambil informasi dari data mentah sebelum diolah memproses gambar, metode ini memberikan informasi yang reliabel yang dapat memberikan informasi mengenai struktur dari gambar.
+Keuntungan dari penggunaan machine learning untuk mendeteksi kanker pada histopathological image analysis adalah kecepatan dari analisa daripada analisa manual yang dilakukan 
+
+
 = Aplikasi Machine Learning dalam Pathologi
 
+//TODO: tambah daging
 == Comupter Asisted Diagnosis(CAD)
 Sistem Computer Asisted Diagnosis (CAD) Menjadi topik hangat di kalangan peneliti di bidang teknologi pada ilmu pathologi, yang dapat membantu untuk mempermudah dalam mendiagnosa pasien seperti dengan memberikan akurasi dalam pendiagnosaan yang lebih tinggi dikarenakan error yang terjadi pada CAD ini bisa di training kembali agar mencapai status yang memuaskan dan dapat membantu dokter patologi.
 
@@ -90,6 +117,10 @@ Content Based Image Retrieval adalah teknik yang menganalisa gambar dan mencocok
 Dalam sejarahnya, banyak penemuan mengenai penyakit seperti kanker dan penyakit infeksi telah ditemukan oleh dokter dan peneliti yang meneliti dan mengobservasi penyakit tersebut secara menyeluruh, namun hal tersebut dapat memakan banyak waktu dan bisa saja memakan korban jiwa jika terlambat dalam menciptakan obatnya, salah satu contoh kasusnya adalah bakteri _H. pylori_ yang di observasi oleh patologis yang sedang melakukan tes pada jaringan gastric mucosa pada  pasien dengan penyakit gastritis 
 // Weinstein JN, Collisson EA, Mills GB, Shaw KRM, Ozenberger BA, Ellrott K, et al. The 565 cancer genome atlas pan-cancer analysis project. Nat Genet 2013;45:1113–20.
 
+
+
+
+//bab fucking 4 
 = Masalah dalam implementasi Histopathological Image Analysis
 
 meski memiliki banyak manfaat yang didapatkan dalam sistem implemetasi dari Histopathological Image Analysis, masih banyak kendala yang terjadi dalam implementasinya diantaranya:
@@ -101,17 +132,31 @@ dalam pemotretan sampel menggunakan microskop itu menghasilkan gambar sebesar 10
 )
 
 == Kekurangan Pelabelan Gambar
-Masalah terbesar yang dialami pada training data ini adalah hanya ada sedikit sampel yang telah diberi label yang tersedia. kunci sukses dari machine learning pada dasarnya ada pengenalan gambar yang sesuai dengan labelnya / mirip. dengan besarnya gambar yang ada maka sangatlah sulit untuk memberikan label pada tingkatan patch, sehingga label yang diberikan hanya pada area yang memiliki kemungkinan tertinggi kanker (area terdeteksi kanker), jadi 
+Masalah terbesar yang dialami pada training data ini adalah hanya ada sedikit sampel yang telah diberi label yang tersedia. kunci sukses dari machine learning pada dasarnya ada pengenalan gambar yang sesuai dengan labelnya / mirip. dengan besarnya gambar yang ada maka sangatlah sulit untuk memberikan label pada tingkatan patch, sehingga label yang diberikan hanya pada area yang memiliki kemungkinan tertinggi kanker (area terdeteksi kanker). untuk melabeli gambar yang ada diperlukan seseorang yang ahli dalam bidang patologi yang dapat menentukan area mana yang memiliki informasi yang berguna sehingga hal ini tidak dapat di outsource pada orang lain yang tidak memiliki pengetahuan dalam bidangnya yang biasa digunakan dalam machine learning.
+//TODO: tambahin ini jir
 
 == Perbedaan level informasi dalam setiap level dari pembesaran gambar
 
 Tissue adalah sekumpulan sel yang memiliki struktur yang sama dan bekerja sama dalam melakukan aksi tertentu, dalam tubuh terdiri dari sel yang memiliki bentuk sama yang mana dalam gambar yang diambil akan memiliki informasi yang sama, namun akan berbeda jika di zoom ke area low-level yang menampilkan informasi mengenai lebih detail yang tidak di tangkap oleh pembesaran sebelumnya, sehingga pada tingkat pembesaran gambar tertentu memiliki informasi berbeda dengan satu sama lain, sehingga data nya tidak bisa di gabungkan. sehingga untuk kondisi tertentu diperlukan jumlah pembesaran yang sesuai agar informasi yang diinginkan muncul dan memberikan informasi yang tepat, hal ini dapat bergantung pada tipe penyakit yang akan di deteksi dan algoritma dari machine learning yang akan digunakan. 
 
-== gambar dsw
-
 #figure(
   image("images/gambar_keseluruhan.png", width: 80%), caption: [gambar keseluruhan]
 )
+
+== WSI gambar tekstur tak beraturan
+Berbeda dengan gambar anjing atau kucing yang ada di alam, yang dapat menunjukan sebuah aturan dan struktur tertentu, gambar jaringan sel tidak memiliki struktur yang jelas, sehingga akan sulit untuk menentukan area mana saja yang memiliki kemungkinan tertinggi kanker, sehingga gambarnya mendekati tekstur daripada objet, dalam machine learning jenis CNN mengambil perbedaan dari beberapa pooling operations, yang mana dapat mengolah tekstur gambar berdasarkan augmentasi dari perbedaan.
+
+== Variasi warna dan Artifak 
+WSI diciptakan melalui banyak proses, tissue (sampel jaringan) dipotong dan disimpan di dalam slide glass, kemudian diwarnai oleh Hematoxyllindan eosin (He) yang kemudian di scan menjadi sebuah gambar, dalam beberapa proses tersebut dapat terjadi hal yang tidak diinginkan yang dapat menambah noise dalam gambar seperti ketika tissue dipotong dan disimpan di slide glass, ada kemungkinan tissue tersebut tertekuk / terlipat sehingga tidak lurus, atau terdapat debu yang hinggap di tissue pada proses tersebut, perbedaan ketebalan tissue dalam pengambilan sampel, sehingga dapat menambah noise pada sampel gambar, kemudian variasi warna dari perbedaan jumlah perwarna (He) menjadi salah satu faktor terbesar dikarenakan perbedaan kandungan warna dari beberapa manufaktur, yang kemudian hal-hal tersebut menghambat dalam machine learning. untuk saat ini dalam mengatasi masalah ini menggunakan conversi gambar ke grayscale (gambarnya menjadi hitam putih), color normalization (mengedit warna gambar menjadi serupa) dan color augmentation(menconversi gambar menjadi warna tertentu). konversi ke gambar grayscale adalah metode yang paling mudah tetapi akan menghilangkan beberapa informasi penting yang ada di dalam warna pada menjadi salah satu poin yang digunakan oleh patologis, untuk metode color normalization ini mencoba untuk menormalisasi warna dengan mengatur variasi warna nya serupa dari pixel ke pixel sehingga serupa dengan warna sampel lainnya, hal ini sangat menghabiskan banyak waktu untuk menormalisasikan semua sampel, untuk mengurangi warnu pemrosesan gambar maka dapat dilakukan proses color augmentation yang menberikan warna, saturasi, kecerahan dan kontrasi yang random sehingga semua gambar bersatu pada titik tersebut, hal ini lebih mudah daripada mencocokan warna sampel satu satu namun metode ini lebih cocok untuk sampel yang memiliki variasi warna yang sedikit (tidak terlalu jauh) agar informasi yang ada tidak terhapus oleh metode ini sehingga untuk menyelesaikan masalah ini bisa menggunakan variasi dari color normalization dan color augmentation secara bersamaan.
+#figure( 
+  image("images/gambar_variasi.png", width: 80%), caption: [variasi warna dan artifak]
+)
+
+// Please cite this article as: Komura D, Ishikawa S, Machine Learning Methods for Histopathological Image Analysis, Comput Struct Biotechnol J(2018), https://doi.org/10.1016/j.csbj.2018.01.001
+
+
+
+
 
 // WSI Whole Slide Image (gambar keseluruhan sampel)
 // ROI Region of Interest (daerah yang diinginkan)
