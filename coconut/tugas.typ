@@ -1,7 +1,7 @@
 == Nama: Hasby Nauril Atoriq  
 == Mata Pelajaran: TIK
+== Kelas: X-1
 
-\
 \
 == 1. Jelaskan Pengertian Jaringan Komputer
 

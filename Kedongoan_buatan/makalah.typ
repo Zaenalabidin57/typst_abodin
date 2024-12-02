@@ -87,7 +87,8 @@ Sistem Computer Asisted Diagnosis (CAD) Menjadi topik hangat di kalangan penelit
 Content Based Image Retrieval adalah teknik yang menganalisa gambar dan mencocokan gambar yang ada pada query, hal ini sangat berguna dalam beberapa kasus, terutama dalam mendiagnosa penyakit yang ada, memberikan sebuah label pada data dan penelitian, salah satu contohnya adalah dalam pendidikan seorang dokter patologi memberikan kuliah kepada mahasiswa dalam menganalisa kasus penyakit yang ada dalam sampel, juga sistem ini dapat membantu para profesional dalam mengenali kasus kanker yang langka.
 
 == Penemuan Baru dalam Clinipathological Relationship
-Dalam sejarahnya, banyak penemuan mengenai penyakit seperti kanker dan penyakit infeksi telah ditemukan oleh dokter dan peneliti yang meneliti dan mengobservasi penyakit tersebut secara menyeluruh, namun hal tersebut dapat memakan banyak waktu dan bisa saja memakan korban jiwa jika 
+Dalam sejarahnya, banyak penemuan mengenai penyakit seperti kanker dan penyakit infeksi telah ditemukan oleh dokter dan peneliti yang meneliti dan mengobservasi penyakit tersebut secara menyeluruh, namun hal tersebut dapat memakan banyak waktu dan bisa saja memakan korban jiwa jika terlambat dalam menciptakan obatnya, salah satu contoh kasusnya adalah bakteri _H. pylori_ yang di observasi oleh patologis yang sedang melakukan tes pada jaringan gastric mucosa pada  pasien dengan penyakit gastritis 
+// Weinstein JN, Collisson EA, Mills GB, Shaw KRM, Ozenberger BA, Ellrott K, et al. The 565 cancer genome atlas pan-cancer analysis project. Nat Genet 2013;45:1113–20.
 
 = Masalah dalam implementasi Histopathological Image Analysis
 
@@ -102,8 +103,16 @@ dalam pemotretan sampel menggunakan microskop itu menghasilkan gambar sebesar 10
 == Kekurangan Pelabelan Gambar
 Masalah terbesar yang dialami pada training data ini adalah hanya ada sedikit sampel yang telah diberi label yang tersedia. kunci sukses dari machine learning pada dasarnya ada pengenalan gambar yang sesuai dengan labelnya / mirip. dengan besarnya gambar yang ada maka sangatlah sulit untuk memberikan label pada tingkatan patch, sehingga label yang diberikan hanya pada area yang memiliki kemungkinan tertinggi kanker (area terdeteksi kanker), jadi 
 
+== Perbedaan level informasi dalam setiap level dari pembesaran gambar
 
-== 
+Tissue adalah sekumpulan sel yang memiliki struktur yang sama dan bekerja sama dalam melakukan aksi tertentu, dalam tubuh terdiri dari sel yang memiliki bentuk sama yang mana dalam gambar yang diambil akan memiliki informasi yang sama, namun akan berbeda jika di zoom ke area low-level yang menampilkan informasi mengenai lebih detail yang tidak di tangkap oleh pembesaran sebelumnya, sehingga pada tingkat pembesaran gambar tertentu memiliki informasi berbeda dengan satu sama lain, sehingga data nya tidak bisa di gabungkan. sehingga untuk kondisi tertentu diperlukan jumlah pembesaran yang sesuai agar informasi yang diinginkan muncul dan memberikan informasi yang tepat, hal ini dapat bergantung pada tipe penyakit yang akan di deteksi dan algoritma dari machine learning yang akan digunakan. 
+
+== gambar dsw
+
+#figure(
+  image("images/gambar_keseluruhan.png", width: 80%), caption: [gambar keseluruhan]
+)
+
 // WSI Whole Slide Image (gambar keseluruhan sampel)
 // ROI Region of Interest (daerah yang diinginkan)
 //
