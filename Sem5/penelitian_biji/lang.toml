@@ -1,0 +1,10 @@
+[conf]
+default-lang = "id"
+
+
+[id]
+title = "Judul"
+abstract = "Abstrak"
+contents = "Daftar Isi"
+bibliography = "Daftar Pustaka"
+
