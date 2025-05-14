@@ -1,0 +1,168 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[useregional=numeric]{datetime2}
+\definecolor{darkblue}{RGB}{0,0,139}
+% Define similar formatting
+\setcounter{secnumdepth}{4}
+\titleformat{\section}
+{\normalfont\large\bfseries\color{darkblue}}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries\color{darkblue}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries\color{darkblue}}{\thesubsubsection}{1em}{}
+
+%refffeeeeerrrreeeeeennnnnssiiiiii
+%\usepackage[backend=tectonic,style=apa]{biblatex}
+%\addbibresource{ref.bib}
+
+% tabular
+%\usepackage{tabularx}
+\usepackage{ltxtable}
+
+%tambah url
+\usepackage{url}
+
+
+\DTMlangsetup{ord=raise} % Optional: formats dates better
+\DTMsetstyle{ddmmyyyy}
+
+% Remove numbering from subsections
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+\begin{document}
+
+\begin{center}
+{\large\bfseries Laporan Pengujian Pengalaman Pengguna (Usability Testing) pada Olauncher}
+\end{center}
+\hrule
+
+\vspace{1cm}
+
+\begin{tabular}{ll}
+Nama Kelompok: Kelompok 4 & \\
+Anggota Kelompok: Rifqi Fadil Fahrial, Ita Nur Afipah, \\Pingki Santika, Ananda Raisya Nur Fitria& \\ 
+Dosen Pembimbing: Dayanni Vera Versanika & \\
+Tanggal:  \DTMtoday & \\
+\end{tabular}
+
+\vspace{1cm}
+
+\section*{Daftar Isi}
+\subsection*{1. Pendahuluan}
+\subsection*{2. Tujuan Pengujian}
+\subsection*{3. Deskripsi Aplikasi yang Diuji}
+\subsection*{4. Metodologi Pengujian}
+\subsection*{5. Alat yang Digunakan}
+\subsection*{6. Jenis-jenis Pengujian}
+\subsection*{7. Hasil Pengujian}
+\subsection*{8. Analisis Hasil}
+\subsection*{9. Kesimpulan dan Rekomendasi}
+\subsection*{10. Daftar Pustaka}
+
+\section*{1. Pendahuluan}
+Aplikasi mobile telah menjadi bagian integral dari kehidupan sehari-hari di era digital ini. Jutaan aplikasi diunduh dan digunakan di berbagai perangkat di seluruh dunia, dan jumlah pengguna aplikasi mobile diperkirakan akan mencapai 7,49 miliar pada tahun 2025. dan jumlah pengguna aplikasi mobile diperkirakan akan mencapai 7,49 miliar pada tahun 2026. Transformasi digital, terutama dalam operasi bisnis dan layanan pelanggan, telah menjadikan pengembangan aplikasi sebagai aspek krusial bagi berbagai organisasi. Keberhasilan sebuah aplikasi mobile tidak hanya diukur dari fitur yang ditawarkan, tetapi juga dari kualitas pengalaman pengguna yang diberikan. 
+
+Dalam siklus pengembangan perangkat lunak mobile, pengujian memegang peranan yang sangat penting untuk meastikan kualitas dan keberhasilan aplikasi sebelum dirilis ke publik. Pengujian aplikasi mobile melibatkan analisis aplikasi untuk fungsionalitas, kegunaan, daya tarik visual dan konsistensi di berbagai perangkat mobile. proses ini membantu memverifikasi apakah aplikasi memenuhi persyaratan teknis dan bisnis yang diharapkan. tim pengembang perlu menguji aplikasi di berbagai resolusi layar, versi sistem operasi, dan kondisi bandwidth jaringan yang berbeda untuk memastikan aplikasi berjalan dengan baik di berbagai konfigurasi perangkat. 
+
+Salah satu aspek penting dalam pengujian aplikasi mobile adalah Pengujian Pengalaman Pengguna atau Usability Testing. Jenis pengujian ini berfokus pada evaluasi kemudahan penggunaan dan keintuitifan sebuah aplikasi dari perspektif pengguna sebenarnya. Bahkan aplikasi dengan fungsionalitas yang sangat baik dapat gagal jika pengalaman pengguna yang ditawarkan tidak sesuai dengan harapan pengguna. Usability testing memberikan wawasan tentang bagaimana pengguna merasa saat berinteraksi dengan aplikasi, seberapa mudah mereka menavigasi, dan seberapa efektif aplikasi tersebut memenuhi kebutuhan mereka.
+
+Pengujian aplikasi mobile tidak terlepas dari berbagai tantangan yang perlu dipertimbangkan. Lanskap mobile yang sangat beragam dengan ribuan jenis perangkat dari berbagai produsen yang menjalankan berbagai versi sistem operasi (Android, iOS, dan lainnya) dengan resolusi layar yang berbeda-beda merupakan tantangan signifikan. Memastikan pengalaman pengguna yang konsisten di seluruh keragaman ini memerlukan upaya pengujian yang ekstensif.
+
+\section*{2. Tujuan Pengujian}
+Pengujian pengalaman pengguna (usability testing) pada aplikasi mobile dilakukan dengan serangkaian tujuan yang spesifik, yang secara keseluruhan bertujuan untuk meningkatkan kualitas dan kepuasan pengguna terhadap aplikasi tersebut. Tujuan-tujuan utama dari pengujian ini adalah sebagai berikut:
+\begin{itemize}[leftmargin=*]
+\item[a.] Menilai fungsionalitas aplikasi. Meskipun fokus utama usability testing adalah pada pengalaman pengguna, pengujian ini secara tidak langsung juga dapat menilai fungsionalitas aplikasi. Melalui observasi pengguna saat mereka mencoba menyelesaikan tugas-tugas tertentu, dapat diketahui apakah fitur-fitur aplikasi berfungsi sebagaimana mestinya. Jika pengguna mengalami kesulitan dalam menyelesaikan tugas yang melibatkan fitur spesifik, hal ini dapat mengindikasikan adanya masalah fungsionalitas yang perlu diperbaiki. Namun, perlu ditekankan bahwa pengujian fungsional yang lebih terfokus akan memberikan penilaian yang lebih mendalam terhadap fungsionalitas aplikasi secara keseluruhan.
+\item[b.] Mengukur kinerja aplikasi di berbagai kondisi. Usability testing dapat memberikan wawasan tentang kinerja aplikasi dari perspektif pengguna. Pengguna akan merasakan secara langsung responsivitas aplikasi, kecepatan pemuatan halaman, dan kelancaran transisi antar layar. Jika pengguna mengalami kelambatan atau aplikasi terasa berat, hal ini akan tercermin dalam umpan balik mereka. Meskipun demikian, pengukuran kinerja yang lebih objektif dan terukur memerlukan penggunaan alat pengujian kinerja khusus yang dapat mensimulasikan berbagai kondisi jaringan dan beban pengguna.
+\item[c.] Mengidentifikasi potensi masalah keamanan. Walaupun pengujian keamanan merupakan bidang yang terspesialisasi, usability testing dapat secara tidak langsung mengidentifikasi potensi masalah keamanan. Misalnya, jika pengguna merasa kesulitan atau kebingungan dengan proses autentikasi, hal ini dapat mengindikasikan adanya celah keamanan atau desain yang kurang baik. Selain itu, observasi terhadap perilaku pengguna juga dapat mengungkapkan praktik yang berisiko, seperti kesulitan dalam membuat kata sandi yang kuat. Namun, untuk identifikasi kerentanan keamanan yang komprehensif, diperlukan pengujian keamanan yang mendalam dengan menggunakan alat dan teknik khusus.
+\item[d.] Menyediakan umpan balik dari pengalaman pengguna. tujuan utama dari usability testing adalah untuk mendapatkan umpan balik langsung dari pengguna mengenai pengalaman mereka saat menggunakan aplikasi. Umpan balik ini mencakup berbagai aspek, termasuk kepuasan pengguna, kemudahan penggunaan, keintuitifan antarmuka, dan keseluruhan pengalaman berinteraksi dengan aplikasi. Umpan balik ini dapat berupa data kualitatif, seperti observasi perilaku pengguna dan komentar mereka selama pengujian, serta data kuantitatif, seperti tingkat keberhasilan penyelesaian tugas dan skor kepuasan pengguna. Informasi yang diperoleh dari umpan balik ini sangat berharga bagi tim desain dan pengembangan untuk melakukan perbaikan dan penyempurnaan aplikasi agar lebih sesuai dengan kebutuhan dan harapan pengguna.
+\end{itemize}
+
+\section*{3. Deskripsi Aplikasi yang Diuji}
+
+\begin{itemize}[leftmargin=*]
+\item[a.] Nama Aplikasi: Olauncher
+\item[b.] Platform: Android
+\item[c.] Fitur Utama: Launcher minimalis yang memberikan fokus kepada pengguna
+\item[d.] Tujuan Aplikasi: mempermudah dalam mengakses aplikasi tanpa gangguan
+\end{itemize}
+
+Peluncur Aplikasi atau Launcher adalah aplikasi penting yang menjadi antar muka antara perangkat dengan pengguna, launcher memiliki fungsi sebagai antar muka untuk pengguna untuk memilih aplikasi yang ingin dijalankan, yang mana menjadi aplikasi yang menjadi faktor besar dalam kenyamanan dalam penggunaan smartphone android, yang mana setiap vendor dari smartphone memberikan Launcher yang berbeda yang memiliki kesan unik dan sudah di optimalisasikan oleh tim teknis untuk mendapatkan pengalaman yang terbaik untuk pengguna. Namun dalam memberikan kesan unik tersebut para vendor memberikan fitur-fitur yang dapat memusingkan pengguna atau bahkan mengganggu dalam penggunaannya yang mana memberikan dampak buruk kepada pengguna karena menambah kompleksitas dalam menggunakan perangkat. 
+
+Olauncher ini hadir sebagai alternatif dari Launcher bawaan yang memberikan kemudahan dan gaya minimalis agar tidak kesulitan dalam menjalankan aplikasi yang diinginkan, yang mana dengan filosofi menampilkan yang penting saja dan menyembunyikan fitur kompleks di belakang, hal ini berkebalikan dengan launcher bawaan dari para vendor smartphone yang mengimplementasikan fitur-fitur baru yang mana menyulitkan pengguna.
+
+Olauncher menjadikan penggunaan smartphone menjadi simpel dan hanya perlu desuwaaaa
+
+%add some shit later
+
+\section*{4. Metodologi Pengujian}
+\subsection*{4.1. Jenis Pengujian}
+Dalam pengujian yang dilaksanakan menggunakan metode Task based testing yang mana pengguna diberikan skenario dan tugas-tugas yang perlu diselesaikan dalam aplikasi dan memberikan kesulitan atau saran dari penggunaan aplikasi. 
+  Dengan menggunakan metode ini dapat memastikan apakah kemudahan yang ditawarkan aplikasi Olauncher lebih baik dibandingkan dengan Launcher bawaan dari vendor smartphone, dengan membandingkan bagaimana skenario yang ada dijalankan maka dapat ditarik kesimpulan Launcher mana yang lebih baik dalam kenyamanan pengguna.
+\subsection*{4.2. Langkah-Langkah Pengujian}
+Pengguna diberikan skenario dari penggunaan launcher yang normal dilakukan ketika menggunakan launcher
+\begin{table}[H]
+  %\begin{tabularx}{|c|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+  \begin{tabularx}{\textwidth}{|c|X|X|X|}
+  \hline
+  No & Nama test & Deskripsi & Langkah-Langkah \\
+  \hline
+1 & Menjalankan Aplikasi & menjalankan aplikasi yang telah di install pada perangkat &\begin{itemize}\item menyentuh nama aplikasi \item menjalankan aplikasi \end{itemize} \\
+  \hline
+2 & Mencari Aplikasi & mencari aplikasi yang akan dijalankan dan menjalankannya & \begin{itemize}\item swipe ke atas untuk menampilkan daftar aplikasi \item menginput nama aplikasi \item menyentuh aplikasi yang akan dijalankan\end{itemize} \\
+  \hline
+  3 & Menambahkan Aplikasi ke Beranda & pengguna menambahkan aplikasi ke beranda untuk kemudahan akses ke aplikasi yang sering digunakan & \begin{itemize}
+    \item tekan lama bagian aplikasi / tulisan "Aplikasi"
+    \item mencari nama aplikasi 
+    \item menekan nama aplikasi
+  \end{itemize} \\
+  \hline
+  4 & mengakses pengaturan & pengguna dapat mengakses pengaturan khusus dari aplikasi yang di install & \begin{itemize}
+    \item swipe ke atas untuk menampilkan daftar aplikasi
+    \item menginput nama aplikasi
+    \item tekan lama nama aplikasi
+    \item tekan icon "pengaturan"
+  \end{itemize} \\
+  \hline
+\end{tabularx}
+\end{table}
+\begin{table}[H]
+  %\begin{tabularx}{|c|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+  \begin{tabularx}{\textwidth}{|c|X|X|X|}
+  \hline
+  5 & Menghapus Aplikasi & pengguna dapat menghapus aplikasi yang tidak digunakan & \begin{itemize}
+    \item swipe ke atas untuk menampilkan daftar aplikasi
+    \item menginput nama aplikasi
+    \item tekan lama nama aplikasi
+    \item tekan icon "Hapus"
+  \end{itemize} \\
+  \hline
+    6 & Mengganti Pengaturan Olauncher & Pengguna dapat mengganti pengaturan Olauncher sesuai keinginan & \begin{itemize}
+      \item tekan lama bagian kosong di beranda
+      \item tampil halaman pengaturan Olauncher
+      \item mengubah pengaturan default
+      \item kembali ke beranda
+    \end{itemize} \\
+  \hline
+\end{tabularx}
+\end{table}
+dengan skenario berikut pengguna diharapkan melakukan tugas yang ada dan kemudian memberikan feedback mengenai pengalaman pengguna dari menggunakan aplikasi yang mana dikumpulkan di forms yang disediakan di google form yang memberikan nilai kemudahan penggunaan dalam skala linear yang mana nilai 1 menunjukan bahwa aplikasi itu sulit untuk digunakan dibandingkan dengan launcher bawaan dan nilai 5 menunjukan bahwa aplikasi itu mudah untuk digunakan dibandingkan dengan launcher bawaan. Setelah itu dapat disimpulkan bahwa aplikasi Olauncher lebih baik dibandingkan dengan launcher bawaan.
+\url{https://forms.gle/CgAJHc6SJbzyX3876}
+% \section*{5. Alat yang digunakan}
+% use espresso desuwa
+\section*{6. Hasil Pengujian}
+
+\section*{7. Analisis Hasil}
+anal lisis desuwaaa
+hasil menunjukkan bahwa aplikasi Olauncher lebih baik dalam secara prinsip penggunaan
+\section*{8. Kesimpulan dan Rekomendasi}
+\section*{9. Daftar Pustaka}
+desuwa
+%\printbibliography
+\end{document}

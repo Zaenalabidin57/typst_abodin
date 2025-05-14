@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\title{Latihan Mandiri}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{table}[ht]
+  \caption{}\label{tab:}
+    \begin{tabular}[l]{ll}
+      Nama & Rifqi Fadil Fahrial \\
+      NIM & 1222646 \\
+      Mata Kuliah & Riset Operasi\\ 
+      Dosen & Mina Ismu Rahayu \\
+    \end{tabular}
+\end{table}
+
+\section*{Analisis Latihan Mandiri: Sistem Antrian di Bengkel}
+\subsection*{Diberikan Informasi:}
+\begin{itemize}
+\item Jumlah slot servis ($c$) = 4
+\item Laju kedatangan ($\lambda$) = 5 kendaraan per jam
+\item Waktu servis rata-rata = 15 menit per kendaraan
+\item Model antrian: M/M/c (Multiple server)
+\end{itemize}
+\subsection*{Penyelesaian}
+Pertama, konversi waktu servis ke laju pelayanan:
+\begin{align}
+\text{Waktu servis} &= 15 \text{ menit} = \frac{15}{60} \text{ jam} = 0,25 \text{ jam per kendaraan} \\
+\text{Laju pelayanan } (\mu) &= \frac{1}{0,25} = 4 \text{ kendaraan per jam per slot servis}
+\end{align}
+\subsection*{1. Menghitung tingkat utilisasi ($\rho$)}
+\begin{align}
+\rho &= \frac{\lambda}{c\mu} = \frac{5}{4 \times 4} = \frac{5}{16} = 0,3125 \text{ (31,25\%)}
+\end{align}
+\subsection*{2. Menghitung $P_0$ (probabilitas tidak ada kendaraan dalam sistem)}
+Untuk model M/M/c:
+\begin{align}
+P_0 &= \left[ \sum_{k=0}^{c-1}\frac{(\lambda/\mu)^k}{k!} + \frac{(\lambda/\mu)^c}{c!} \cdot \frac{1}{1-\rho} \right]^{-1} \\
+P_0 &= \left[ \sum_{k=0}^{3}\frac{(5/4)^k}{k!} + \frac{(5/4)^4}{4!} \cdot \frac{1}{1-0,3125} \right]^{-1}
+\end{align}
+Menghitung bagian pertama:
+\begin{align}
+\frac{(5/4)^0}{0!} &= 1 \\
+\frac{(5/4)^1}{1!} &= 1,25 \\
+\frac{(5/4)^2}{2!} &= 0,78125 \\
+\frac{(5/4)^3}{3!} &= 0,325521
+\end{align}
+Menghitung bagian kedua:
+\begin{align}
+\frac{(5/4)^4}{4!} &= 0,10172 \\
+\frac{1}{1-0,3125} &= \frac{1}{0,6875} = 1,45455 \\
+\frac{(5/4)^4}{4!} \cdot \frac{1}{1-0,3125} &= 0,10172 \times 1,45455 = 0,14796
+\end{align}
+\begin{align}
+P_0 &= \frac{1}{1 + 1,25 + 0,78125 + 0,325521 + 0,14796} \\
+P_0 &= \frac{1}{3,50473} = 0,2853 \text{ (28,53\%)}
+\end{align}
+\subsection*{3. Menghitung probabilitas seluruh slot servis penuh ($P_4$)}
+\begin{align}
+P_4 &= \frac{(\lambda/\mu)^4}{4!} \times P_0 \\
+P_4 &= \frac{(5/4)^4}{4!} \times 0,2853 = 0,10172 \times 0,2853 = 0,0290 \text{ (2,90\%)}
+\end{align}
+\subsection*{4. Menghitung jumlah rata-rata kendaraan dalam sistem ($L$)}
+Untuk model M/M/c:
+\begin{align}
+L &= \frac{\lambda\mu(\lambda/\mu)^c}{(c-1)!(c\mu-\lambda)^2} \times P_0 + \frac{\lambda}{\mu} \\
+L &= \frac{5 \times 4 \times (5/4)^4}{(4-1)! \times (4 \times 4 - 5)^2} \times 0,2853 + \frac{5}{4} \\
+L &= \frac{5 \times 4 \times (5/4)^4}{6 \times 11^2} \times 0,2853 + 1,25 \\
+L &= \frac{5 \times 4 \times 2,44141}{6 \times 121} \times 0,2853 + 1,25 \\
+L &= \frac{48,8282}{6 \times 121} \times 0,2853 + 1,25 \\
+L &= \frac{48,8282}{726} \times 0,2853 + 1,25 \\
+L &= 0,0673 \times 0,2853 + 1,25 \\
+L &= 0,0192 + 1,25 \\
+L &= 1,2692 \text{ kendaraan}
+\end{align}
+\subsection*{5. Menghitung waktu tunggu rata-rata kendaraan di bengkel ($W$)}
+\begin{align}
+W &= \frac{L}{\lambda} = \frac{1,2692}{5} = 0,2538 \text{ jam} = 15,23 \text{ menit}
+\end{align}
+\section*{Jawaban}
+\begin{enumerate}
+\item Probabilitas seluruh slot servis penuh = 2,90\%
+\item Jumlah rata-rata kendaraan dalam sistem = 1,2692 kendaraan
+\item Waktu tunggu rata-rata kendaraan di bengkel = 15,23 menit
+\end{enumerate}
+\section*{Kesimpulan}
+Sistem antrian di bengkel bekerja dengan efisien karena utilisasi server (31,25\%) relatif rendah, probabilitas seluruh slot penuh sangat kecil (2,90\%), dan waktu tunggu rata-rata hanya sekitar 15 menit.
+\end{document}
